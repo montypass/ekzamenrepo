@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Exam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="622-J7-4yQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="73g-Tw-F84">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="622-J7-4yQ" secondAttribute="bottom" id="KKR-CD-37z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="622-J7-4yQ" secondAttribute="trailing" id="P0d-vN-YAs"/>
+                            <constraint firstItem="622-J7-4yQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pvX-K4-OXe"/>
+                            <constraint firstItem="622-J7-4yQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sRX-ny-1bx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="622-J7-4yQ" id="dGC-Ln-S2I"/>
+                        <segue destination="y8B-Lr-QG4" kind="presentation" identifier="openDetailModal" id="lIx-ru-XkS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="79"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="L5L-we-BGq">
+            <objects>
+                <viewController id="y8B-Lr-QG4" customClass="DetailViewController" customModule="Exam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mWC-xU-zx5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkT-XB-crf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kkT-XB-crf" secondAttribute="height" multiplier="3:2" id="plr-5R-hGX"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-wE-bky">
+                                <rect key="frame" x="16" y="284" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4T-hl-fmG">
+                                <rect key="frame" x="16" y="384" width="382" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yOS-rM-g0U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Удалить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDeleteButton:" destination="y8B-Lr-QG4" eventType="touchUpInside" id="dun-1U-fTw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-Lf-sEa">
+                                <rect key="frame" x="16" y="326" width="382" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IQ8-jf-fzG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Сохранить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSaveButton:" destination="y8B-Lr-QG4" eventType="touchUpInside" id="HWm-aV-utb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WkW-l7-dpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WkW-l7-dpf" firstAttribute="trailing" secondItem="Vti-wE-bky" secondAttribute="trailing" constant="16" id="0O6-9o-rfZ"/>
+                            <constraint firstItem="Vti-wE-bky" firstAttribute="top" secondItem="kkT-XB-crf" secondAttribute="bottom" constant="8" id="82m-py-wBm"/>
+                            <constraint firstItem="IUT-Lf-sEa" firstAttribute="leading" secondItem="WkW-l7-dpf" secondAttribute="leading" constant="16" id="AL9-Bi-AcE"/>
+                            <constraint firstItem="WkW-l7-dpf" firstAttribute="trailing" secondItem="kkT-XB-crf" secondAttribute="trailing" id="PSf-z2-I2H"/>
+                            <constraint firstItem="E4T-hl-fmG" firstAttribute="leading" secondItem="WkW-l7-dpf" secondAttribute="leading" constant="16" id="TCG-Pz-Pr4"/>
+                            <constraint firstItem="IUT-Lf-sEa" firstAttribute="top" secondItem="Vti-wE-bky" secondAttribute="bottom" constant="8" id="UYW-fe-wx4"/>
+                            <constraint firstItem="WkW-l7-dpf" firstAttribute="trailing" secondItem="E4T-hl-fmG" secondAttribute="trailing" constant="16" id="cby-uN-eBr"/>
+                            <constraint firstItem="kkT-XB-crf" firstAttribute="top" secondItem="WkW-l7-dpf" secondAttribute="top" id="dDv-Db-523"/>
+                            <constraint firstItem="Vti-wE-bky" firstAttribute="leading" secondItem="WkW-l7-dpf" secondAttribute="leading" constant="16" id="ijl-2Z-KW2"/>
+                            <constraint firstItem="E4T-hl-fmG" firstAttribute="top" secondItem="IUT-Lf-sEa" secondAttribute="bottom" constant="8" id="opS-ag-wJm"/>
+                            <constraint firstItem="WkW-l7-dpf" firstAttribute="trailing" secondItem="IUT-Lf-sEa" secondAttribute="trailing" constant="16" id="x4o-ak-xnz"/>
+                            <constraint firstItem="kkT-XB-crf" firstAttribute="leading" secondItem="WkW-l7-dpf" secondAttribute="leading" id="zQR-Ng-4gJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="E4T-hl-fmG" id="rvG-eA-xrF"/>
+                        <outlet property="pictureImageView" destination="kkT-XB-crf" id="KpR-fP-uTT"/>
+                        <outlet property="pictureNameTextField" destination="Vti-wE-bky" id="Btt-xN-OKG"/>
+                        <outlet property="saveButton" destination="IUT-Lf-sEa" id="L4B-Bf-wsc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQH-Tt-L7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
